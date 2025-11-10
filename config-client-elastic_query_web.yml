@@ -18,6 +18,6 @@ spring:
     cache: false
 
 user-config:
-  username: test
-  password: '{cipher}baeb90d57edb9a050b97b98a7d8cabe80ee884e6fff16c22956172459a43e54d'
+  username: user
+  password: ENC(0KybwyexsK+R7+kl+AE5m7ngz/b6NMtECzlJRZPFo1i6B/b9UZ5yvKYvIkOJAKhq)
   roles: USER
