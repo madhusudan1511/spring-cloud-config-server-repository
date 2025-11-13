@@ -36,3 +36,4 @@ spring:
       client:
         reactive:
           max-in-memory-size: 25MB
+          use-point-in-time: false
