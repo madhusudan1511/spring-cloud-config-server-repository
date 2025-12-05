@@ -20,6 +20,14 @@ user-config:
   password: ENC(0KybwyexsK+R7+kl+AE5m7ngz/b6NMtECzlJRZPFo1i6B/b9UZ5yvKYvIkOJAKhq)
   roles: USER
 
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8081/auth/realms/microservices_realm
+          jwk-set-uri: http://localhost:8081/auth/realms/microservices_realm/protocol/openid-connect/certs
+
 springdoc:
   api-docs:
     path: /api-docs
