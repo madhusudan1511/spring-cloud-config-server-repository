@@ -48,7 +48,7 @@ spring:
             authorization-grant-type: client_credentials
         provider:
           keycloak:
-            issuerUri: http://localhost:8081/auth/realms/microservices_realm
+            issuerUri: http://localhost:9091/auth/realms/microservices_realm
           
   datasource:
     url: jdbc:postgresql://localhost:5433/postgres?currentSchema=public&binaryTransfer=true&reWriteBatchedInserts=true
