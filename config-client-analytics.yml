@@ -12,26 +12,27 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:9091/auth/realms/myrealm
-          jwk-set-uri: http://localhost:9091/auth/realms/myrealm/protocol/openid-connect/certs
+          issuer-uri: http://localhost:9091/auth/realms/microservices_realm
+          jwk-set-uri: http://localhost:9091/auth/realms/microservices_realm/protocol/openid-connect/certs
   jpa:
     open-in-view: false
     show-sql: true
-    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQL9Dialect
+        dialect: org.hibernate.dialect.PostgreSQLDialect
         use_sql_comments: false
         format_sql: true
-        jdbc.batch_size: 50
+        jdbc:
+          batch_size: 50
         order_inserts: true
         order_updates: true
+
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=analytics&binaryTransfer=true&reWriteBatchedInserts=true
-    username: postgres
-    password: admin
+    url: jdbc:postgresql://localhost:5433/postgres?currentSchema=public&binaryTransfer=true&reWriteBatchedInserts=true
+    username: keycloak
+    password: keycloak
     driver-class-name: org.postgresql.Driver
-    platform: postgres
+
 
 kafka-config:
   bootstrap-servers: localhost:19092, localhost:29092, localhost:39092
