@@ -66,3 +66,27 @@ retry-config:
   multiplier: 2.0
   maxAttempts: 3
   sleep-time-ms: 2000
+
+management:
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: health, prometheus
+      path-mapping:
+        prometheus: metrics
+  endpoint:
+    health:
+      show-details: always
+    prometheus:
+      cache:
+        time-to-live: 1ms
+        
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+security:
+  paths-to-ignore: /api-docs, /actuator/**
